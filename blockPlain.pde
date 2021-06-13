@@ -1,11 +1,12 @@
 Block[] blocks = new Block[10];
 Ball ball;
-float racket_width = 50.0, racket_height = 3.0;
+Racket racket;
 
 void setup() {
   size(400, 300);
   initBall();
   initBlocks();
+  initRacket();
 }
 
 void draw() {  
@@ -18,8 +19,9 @@ void draw() {
   checkBlocksAndBounceBall();
   showBlocks();
 
-  bounceBallByRacketOrNot(height - 50);
-  showRacket(height - 50);
+  racket.setX(mouseX, width);
+  bounceBallByRacketOrNot();
+  showRacket();
 
   // 落ちた時の判定
   if (ball.y + ball.height >= height) {
