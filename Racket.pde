@@ -1,5 +1,5 @@
 class Racket {
-    float x, y, width, height;
+    private float x, y, width, height;
     Racket(float x, float y, float width, float height) {
         this.x      = x;
         this.y      = y;

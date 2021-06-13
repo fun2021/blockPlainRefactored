@@ -1,6 +1,6 @@
 class Block {
-    float x, y, width, height;
-    int hp;
+    private float x, y, width, height;
+    private int hp;
 
     Block(float x, float y, float width, float height, int hp) {
         this.x      = x;

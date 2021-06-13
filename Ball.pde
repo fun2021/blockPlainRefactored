@@ -1,5 +1,5 @@
 class Ball {
-    float x, y, width, height, dx, dy;
+    private float x, y, width, height, dx, dy;
 
     Ball(float x, float y, float width, float height, float dx, float dy) {
         this.x      = x;
