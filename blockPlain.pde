@@ -1,4 +1,4 @@
-int blocks[] = new int[10];
+Block[] blocks = new Block[10];
 Ball ball;
 float racket_width = 50.0, racket_height = 3.0;
 
