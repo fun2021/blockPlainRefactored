@@ -32,4 +32,11 @@ class Ball {
         return 3;
     }
 
+    void bounceX() {
+        this.dx = -dx;
+    }
+
+    void bounceY() {
+        this.dy = -dy;
+    }
 }

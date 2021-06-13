@@ -27,9 +27,9 @@ void draw() {
     initBlocks();
   }
   if (ball.x < 0 || ball.x + ball.width >= width) { // 左右の壁のどちらかに突き抜けている場合
-    ball.dx = -ball.dx;
+    ball.bounceX();
   }
   if (ball.y < 0) { // 上の壁に突き抜けている場合
-    ball.dy = -ball.dy;
+    ball.bounceY();
   }
 }

@@ -19,13 +19,13 @@ void checkBlocksAndBounceBall() {
       int ret = ball.willOverlapByPositionDifferential(i * block_width, 40, block_width, block_height);
       if (ret > 0) {
         if (ret == 1) {
-          ball.dx = -ball.dx;
+          ball.bounceX();
         } else if (ret == 2) {
-          ball.dy = -ball.dy;
+          ball.bounceY();
           blocks[i]--;
         } else if (ret == 3) {
-          ball.dx = -ball.dx;
-          ball.dy = -ball.dy;
+          ball.bounceX();
+          ball.bounceY();
           blocks[i]--;
         }
         return;
