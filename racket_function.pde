@@ -1,8 +1,8 @@
 /*
-  checkAndShowRacket()
+  checkBounceBallByRacketOrNotAndShowRacket()
   float r_y;  // r_hはラケットのy座標
 */
-void checkAndShowRacket(float r_y) {
+void checkBounceBallByRacketOrNotAndShowRacket(float r_y) {
   float r_x = mouseX; // r_x はラケットの左側のx座標
   
   if (r_x + racket_width > width) { // 右に寄りすぎていたら補正する
@@ -10,7 +10,7 @@ void checkAndShowRacket(float r_y) {
   } 
   
   /* ブロックがぶつかっていたら上に跳ね返る */
-  if (blockHitCheck(r_x,r_y,racket_width,racket_height,ball_x,ball_y,ball_width,ball_height,ball_dx,ball_dy) > 0) {
+  if (willOverlapByPositionDifferential(r_x,r_y,racket_width,racket_height,ball_x,ball_y,ball_width,ball_height,ball_dx,ball_dy) > 0) {
     ball_dy = -2;
   }
   

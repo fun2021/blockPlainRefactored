@@ -16,7 +16,7 @@ boolean isOverlap(float x1, float y1, float w1, float h1,
  y軸のみの時: 2
  x軸, y軸両方の時: 3
 */
-int blockHitCheck(float ball_x, float ball_y, float w, float h,
+int willOverlapByPositionDifferential(float ball_x, float ball_y, float w, float h,
  float bx, float by, float block_width, float block_height, float ball_dx, float ball_dy) {
   int xflag = 0, yflag = 0;
   

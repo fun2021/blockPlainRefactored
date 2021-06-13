@@ -15,10 +15,10 @@ void draw() {
   background(192, 192, 255);
   rect(ball_x, ball_y, ball_width, ball_height); // ball
 
-  checkBlocks();
+  checkBlocksAndBounceBall();
   showBlocks();
   
-  checkAndShowRacket(height-50);
+  checkBounceBallByRacketOrNotAndShowRacket(height-50);
 
   // 壁との衝突
   if (ball_y + ball_height >= height) {

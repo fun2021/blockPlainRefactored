@@ -13,10 +13,10 @@ void initBlocks() {
 /*
  10個のブロックのどれかにぶつかっていたら跳ね返る
 */
-void checkBlocks() {
+void checkBlocksAndBounceBall() {
   for (int i = 0; i < blocks.length ; i++) {
     if (blocks[i] > 0) {
-      int ret = blockHitCheck(i*block_width,40,block_width,block_height,ball_x,ball_y,ball_width,ball_height,ball_dx,ball_dy);
+      int ret = willOverlapByPositionDifferential(i*block_width,40,block_width,block_height,ball_x,ball_y,ball_width,ball_height,ball_dx,ball_dy);
       if (ret > 0) {
         if (ret == 1) {
           ball_dx = -ball_dx;
