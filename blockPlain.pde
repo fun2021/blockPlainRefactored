@@ -16,12 +16,14 @@ void draw() {
 
   ball.show();
 
-  checkBlocksAndBounceBall();
-  showBlocks();
+  for (int i = 0; i < blocks.length; i++) {
+    blocks[i].applyBallBounceOrNot(ball);
+    blocks[i].show();
+  }
 
   racket.setX(mouseX, width);
-  bounceBallByRacketOrNot();
-  showRacket();
+  racket.applyBallBounceOrNot(ball);
+  racket.show();
 
   // 落ちた時の判定
   if (ball.isBottomOver(height)) {

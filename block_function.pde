@@ -9,21 +9,3 @@ void initBlocks() {
     blocks[i] = new Block(i * block_width, 40, block_width, block_height, 2);
   }
 }
-
-/*
- 10個のブロックのどれかにぶつかっていたら跳ね返る
-*/
-void checkBlocksAndBounceBall() {
-  for (int i = 0; i < blocks.length; i++) {
-    blocks[i].applyBallBounceOrNot(ball);
-  }  
-}
-
-/*
- 10個のブロックを表示する
-*/
-void showBlocks() {
-  for (int i = 0; i < blocks.length; i++) {
-    blocks[i].show();
-  }
-}
