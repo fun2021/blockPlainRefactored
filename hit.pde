@@ -16,16 +16,16 @@ boolean isOverlap(float x1, float y1, float w1, float h1,
  y軸のみの時: 2
  x軸, y軸両方の時: 3
 */
-int blockHitCheck(float x, float y, float w, float h,
- float bx, float by, float bw, float bh, float dx, float dy) {
+int blockHitCheck(float ball_x, float ball_y, float w, float h,
+ float bx, float by, float block_width, float block_height, float ball_dx, float ball_dy) {
   int xflag = 0, yflag = 0;
   
-  if (!isOverlap(x,y,w,h,bx+dx,by+dy,bw,bh)) {
+  if (!isOverlap(ball_x,ball_y,w,h,bx+ball_dx,by+ball_dy,block_width,block_height)) {
     return 0; // ぶつからなかったら 0を返す
   }
   
-  if (isOverlap(x,y,w,h,bx+dx,by,bw,bh)) xflag = 1;
-  if (isOverlap(x,y,w,h,bx,by+dy,bw,bh)) yflag = 2;
+  if (isOverlap(ball_x,ball_y,w,h,bx+ball_dx,by,block_width,block_height)) xflag = 1;
+  if (isOverlap(ball_x,ball_y,w,h,bx,by+ball_dy,block_width,block_height)) yflag = 2;
   if (xflag + yflag > 0) { return xflag + yflag;}
   return 3;
 }

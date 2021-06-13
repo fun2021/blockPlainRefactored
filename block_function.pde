@@ -1,32 +1,32 @@
-float bw, bh = 40.0;
+float block_width, block_height = 40.0;
 
 /*
  10個のブロックを初期化する
 */
 void initBlocks() {
-  for (int i = 0; i < block.length ; i++) {
-    block[i] = 2;
+  for (int i = 0; i < blocks.length ; i++) {
+    blocks[i] = 2;
   }
-  bw = width / block.length; // ブロックの幅を決める
+  block_width = width / blocks.length; // ブロックの幅を決める
 }
 
 /*
  10個のブロックのどれかにぶつかっていたら跳ね返る
 */
 void checkBlocks() {
-  for (int i = 0; i < block.length ; i++) {
-    if (block[i] > 0) {
-      int ret = blockHitCheck(i*bw,40,bw,bh,x,y,b_w,b_h,dx,dy);
+  for (int i = 0; i < blocks.length ; i++) {
+    if (blocks[i] > 0) {
+      int ret = blockHitCheck(i*block_width,40,block_width,block_height,ball_x,ball_y,ball_width,ball_height,ball_dx,ball_dy);
       if (ret > 0) {
         if (ret == 1) {
-          dx = -dx;
+          ball_dx = -ball_dx;
         } else if (ret == 2) {
-          dy = -dy;
-          block[i]--;
+          ball_dy = -ball_dy;
+          blocks[i]--;
         } else if (ret == 3) {
-          dx = -dx;
-          dy = -dy;
-          block[i]--;
+          ball_dx = -ball_dx;
+          ball_dy = -ball_dy;
+          blocks[i]--;
         }
         return;
       }
@@ -38,10 +38,10 @@ void checkBlocks() {
  10個のブロックを表示する
 */
 void showBlocks() {
-  for (int i = 0; i < block.length ; i++) {
-    if (block[i] > 0) {
-      text(block[i], i * bw, bh); // 消すために必要なhitの個数
-      rect(i * bw, 40, bw, bh); // ブロックの形の表示
+  for (int i = 0; i < blocks.length ; i++) {
+    if (blocks[i] > 0) {
+      text(blocks[i], i * block_width, block_height); // 消すために必要なhitの個数
+      rect(i * block_width, 40, block_width, block_height); // ブロックの形の表示
     }
   }
 }

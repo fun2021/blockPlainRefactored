@@ -1,8 +1,8 @@
 void initBall() {
-  x = 10;
-  y = 90;
-  dx = 1;
-  dy = 2;
-  b_w = 20;
-  b_h = 10;
+  ball_x = 10;
+  ball_y = 90;
+  ball_dx = 1;
+  ball_dy = 2;
+  ball_width = 20;
+  ball_height = 10;
 }
