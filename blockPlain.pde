@@ -21,7 +21,7 @@ void draw() {
   bounceBallByRacketOrNot(height - 50);
   showRacket(height - 50);
 
-  // 壁との衝突
+  // 落ちた時の判定
   if (ball_y + ball_height >= height) {
     initBall();
     initBlocks();

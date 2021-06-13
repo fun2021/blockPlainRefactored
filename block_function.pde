@@ -40,7 +40,7 @@ void checkBlocksAndBounceBall() {
 void showBlocks() {
   for (int i = 0; i < blocks.length ; i++) {
     if (blocks[i] > 0) {
-      text(blocks[i], i * block_width, block_height); // 消すために必要なhitの個数
+      text(blocks[i], i * block_width, block_height); // 消すために必要なhitの個数の表示
       rect(i * block_width, 40, block_width, block_height); // ブロックの形の表示
     }
   }

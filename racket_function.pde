@@ -1,6 +1,6 @@
 /*
   checkBounceBallByRacketOrNotAndShowRacket()
-  float r_y;  // r_hはラケットのy座標
+  float r_y;  // r_yはラケットのy座標
 */
 void showRacket(float r_y) {
   float r_x = mouseX; // r_x はラケットの左側のx座標
