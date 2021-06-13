@@ -18,9 +18,9 @@ class Racket {
         }
     }
 
-    void applyBallBounceOrNot() {
+    void applyBallBounceOrNot(Ball ball) {
         if (ball.willOverlapByPositionDifferential(this.x, this.y, this.width, this.height) > 0) {
-            ball.dy = -2;
+            ball.setYSpeed(-2);
         }
     }
 }

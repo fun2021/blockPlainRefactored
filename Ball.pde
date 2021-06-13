@@ -39,4 +39,12 @@ class Ball {
     void bounceY() {
         this.dy = -dy;
     }
+
+    void setXSpeed(float dx) {
+        this.dx = dx;
+    }
+
+    void setYSpeed(float dy) {
+        this.dy = dy;
+    }
 }

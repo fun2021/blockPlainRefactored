@@ -11,7 +11,7 @@ void showRacket() {
   float r_y // r_yはラケットのy座標
 */
 void bounceBallByRacketOrNot() {
-  racket.applyBallBounceOrNot();
+  racket.applyBallBounceOrNot(ball);
 }
 
 void initRacket() {

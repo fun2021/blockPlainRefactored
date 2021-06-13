@@ -20,7 +20,7 @@ class Block {
         this.hp -= 1;
     }
 
-    void applyBallBounceOrNot() {
+    void applyBallBounceOrNot(Ball ball) {
         if (this.hp <= 0) return;
         int ret = ball.willOverlapByPositionDifferential(this.x, this.y, this.width, this.height);
         if (ret > 0) {

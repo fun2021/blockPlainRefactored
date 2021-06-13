@@ -15,7 +15,7 @@ void initBlocks() {
 */
 void checkBlocksAndBounceBall() {
   for (int i = 0; i < blocks.length; i++) {
-    blocks[i].applyBallBounceOrNot();
+    blocks[i].applyBallBounceOrNot(ball);
   }  
 }
 
