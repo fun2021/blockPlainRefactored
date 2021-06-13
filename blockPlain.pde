@@ -3,7 +3,7 @@ float ball_x, ball_y, ball_width, ball_height, ball_dx, ball_dy;
 float racket_width = 50.0, racket_height = 3.0;
 
 void setup() {
-  size(400,300);
+  size(400, 300);
   initBall();
   initBlocks();
 }
@@ -26,6 +26,10 @@ void draw() {
     initBall();
     initBlocks();
   }
-  if (ball_x < 0 || ball_x+ball_width >=width) {ball_dx = -ball_dx;}
-  if (ball_y < 0) {ball_dy = -ball_dy;}
+  if (ball_x < 0 || ball_x + ball_width >= width) { // 左右の壁のどちらかに突き抜けている場合
+    ball_dx = -ball_dx;
+  }
+  if (ball_y < 0) { // 上の壁に突き抜けている場合
+    ball_dy = -ball_dy;
+  }
 }
