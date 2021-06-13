@@ -30,10 +30,14 @@ void draw() {
     initBall();
     initBlocks();
   }
-  if (ball.isLeftOver(0) || ball.isRightOver(width)) { // 左右の壁のどちらかに突き抜けている場合
+
+  // 左右の壁のどちらかに突き抜けている場合
+  if (ball.isLeftOver(0) || ball.isRightOver(width)) {
     ball.bounceX();
   }
-  if (ball.isTopOver(0)) { // 上の壁に突き抜けている場合
+
+  // 上の壁に突き抜けている場合
+  if (ball.isTopOver(0)) {
     ball.bounceY();
   }
 }
