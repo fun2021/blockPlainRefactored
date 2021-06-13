@@ -24,14 +24,14 @@ void draw() {
   showRacket();
 
   // 落ちた時の判定
-  if (ball.y + ball.height >= height) {
+  if (ball.isBottomOver(height)) {
     initBall();
     initBlocks();
   }
-  if (ball.x < 0 || ball.x + ball.width >= width) { // 左右の壁のどちらかに突き抜けている場合
+  if (ball.isLeftOver(0) || ball.isRightOver(width)) { // 左右の壁のどちらかに突き抜けている場合
     ball.bounceX();
   }
-  if (ball.y < 0) { // 上の壁に突き抜けている場合
+  if (ball.isTopOver(0)) { // 上の壁に突き抜けている場合
     ball.bounceY();
   }
 }

@@ -47,4 +47,20 @@ class Ball {
     void setYSpeed(float dy) {
         this.dy = dy;
     }
+
+    boolean isTopOver(float y) {
+        return this.y < y;
+    }
+
+    boolean isBottomOver(float y) {
+        return this.y + this.height >= y;
+    }
+
+    boolean isLeftOver(float x) {
+        return this.x < 0;
+    }
+
+    boolean isRightOver(float x) {
+        return this.x + this.width >= x;
+    }
 }
