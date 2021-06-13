@@ -1,5 +1,5 @@
 /*
- Axis-aligned bounding box の当たり判定を実装するクラス
+ Axis-aligned bounding box の当たり判定を提供するクラス
  */
 
 abstract class AABB {
@@ -11,10 +11,12 @@ abstract class AABB {
     this.height = height;
   }
 
+  // 他のAABBとぶつかっているか？
   boolean isOverlapWith(AABB other) {
     return willOverlapWith(other, 0, 0);
   }
 
+  // 自分をself_dx, self_dy動かしたとき、他のAABBとぶつかるか？
   boolean willOverlapWith(AABB other, float self_dx, float self_dy) {
     return this.x + self_dx < other.x + other.width &&
       other.x          < this.x  + self_dx + this.width &&

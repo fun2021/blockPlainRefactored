@@ -1,4 +1,4 @@
-float block_height = 40.0;
+final float block_height = 40.0;
 
 /*
  10個のブロックを初期化する
