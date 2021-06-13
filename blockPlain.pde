@@ -13,7 +13,7 @@ void draw() {
 
   background(192, 192, 255);
 
-  ball.showBall();
+  ball.show();
 
   checkBlocksAndBounceBall();
   showBlocks();

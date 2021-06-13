@@ -15,7 +15,7 @@ class Ball {
         this.y += this.dy;
     }
 
-    void showBall() {
+    void show() {
         rect(this.x, this.y, this.width, this.height); // ball
     }
 
