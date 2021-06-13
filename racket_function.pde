@@ -19,7 +19,7 @@ void bounceBallByRacketOrNot(float r_y) {
   } 
   
   /* ブロックがぶつかっていたら上に跳ね返る */
-  if (willOverlapByPositionDifferential(r_x, r_y, racket_width, racket_height, ball_x, ball_y, ball_width, ball_height, ball_dx, ball_dy) > 0) {
-    ball_dy = -2;
+  if (ball.willOverlapByPositionDifferential(r_x, r_y, racket_width, racket_height) > 0) {
+    ball.dy = -2;
   }
 }

@@ -1,8 +1,3 @@
 void initBall() {
-  ball_x = 10;
-  ball_y = 90;
-  ball_dx = 1;
-  ball_dy = 2;
-  ball_width = 20;
-  ball_height = 10;
+  ball = new Ball(10, 90, 20, 10, 1, 2);
 }

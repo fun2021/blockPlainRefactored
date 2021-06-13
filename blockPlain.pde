@@ -1,5 +1,5 @@
 int blocks[] = new int[10];
-float ball_x, ball_y, ball_width, ball_height, ball_dx, ball_dy;
+Ball ball;
 float racket_width = 50.0, racket_height = 3.0;
 
 void setup() {
@@ -9,11 +9,11 @@ void setup() {
 }
 
 void draw() {  
-  ball_x += ball_dx; // ball_dx は1フレームごとにx方向に動く距離(速度)
-  ball_y += ball_dy; // ball_dy は1フレームごとにy方向に動く距離(速度)
-  
+  ball.applyDifferential();
+
   background(192, 192, 255);
-  rect(ball_x, ball_y, ball_width, ball_height); // ball
+
+  ball.showBall();
 
   checkBlocksAndBounceBall();
   showBlocks();
@@ -22,14 +22,14 @@ void draw() {
   showRacket(height - 50);
 
   // 落ちた時の判定
-  if (ball_y + ball_height >= height) {
+  if (ball.y + ball.height >= height) {
     initBall();
     initBlocks();
   }
-  if (ball_x < 0 || ball_x + ball_width >= width) { // 左右の壁のどちらかに突き抜けている場合
-    ball_dx = -ball_dx;
+  if (ball.x < 0 || ball.x + ball.width >= width) { // 左右の壁のどちらかに突き抜けている場合
+    ball.dx = -ball.dx;
   }
-  if (ball_y < 0) { // 上の壁に突き抜けている場合
-    ball_dy = -ball_dy;
+  if (ball.y < 0) { // 上の壁に突き抜けている場合
+    ball.dy = -ball.dy;
   }
 }

@@ -16,16 +16,16 @@ void initBlocks() {
 void checkBlocksAndBounceBall() {
   for (int i = 0; i < blocks.length; i++) {
     if (blocks[i] > 0) {
-      int ret = willOverlapByPositionDifferential(i * block_width, 40, block_width, block_height, ball_x, ball_y, ball_width, ball_height, ball_dx, ball_dy);
+      int ret = ball.willOverlapByPositionDifferential(i * block_width, 40, block_width, block_height);
       if (ret > 0) {
         if (ret == 1) {
-          ball_dx = -ball_dx;
+          ball.dx = -ball.dx;
         } else if (ret == 2) {
-          ball_dy = -ball_dy;
+          ball.dy = -ball.dy;
           blocks[i]--;
         } else if (ret == 3) {
-          ball_dx = -ball_dx;
-          ball_dy = -ball_dy;
+          ball.dx = -ball.dx;
+          ball.dy = -ball.dy;
           blocks[i]--;
         }
         return;
