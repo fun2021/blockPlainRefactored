@@ -2,7 +2,16 @@
   checkBounceBallByRacketOrNotAndShowRacket()
   float r_y;  // r_hはラケットのy座標
 */
-void checkBounceBallByRacketOrNotAndShowRacket(float r_y) {
+void showRacket(float r_y) {
+  float r_x = mouseX; // r_x はラケットの左側のx座標
+  rect(r_x, r_y, racket_width, racket_height); // racketを表示する
+}
+
+/*
+  checkBounceBallByRacket()
+  float r_y // r_yはラケットのy座標
+*/
+void bounceBallByRacketOrNot(float r_y) {
   float r_x = mouseX; // r_x はラケットの左側のx座標
   
   if (r_x + racket_width > width) { // 右に寄りすぎていたら補正する
@@ -13,6 +22,4 @@ void checkBounceBallByRacketOrNotAndShowRacket(float r_y) {
   if (willOverlapByPositionDifferential(r_x,r_y,racket_width,racket_height,ball_x,ball_y,ball_width,ball_height,ball_dx,ball_dy) > 0) {
     ball_dy = -2;
   }
-  
-  rect(r_x, r_y, racket_width, racket_height); // racketを表示する
 }

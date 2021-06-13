@@ -17,8 +17,9 @@ void draw() {
 
   checkBlocksAndBounceBall();
   showBlocks();
-  
-  checkBounceBallByRacketOrNotAndShowRacket(height-50);
+
+  bounceBallByRacketOrNot(height - 50);
+  showRacket(height - 50);
 
   // 壁との衝突
   if (ball_y + ball_height >= height) {
