@@ -1,5 +1,5 @@
 int block[] = new int[10];
-float x, y, b_w = 20, b_h = 10, dx, dy;
+float x, y, b_w, b_h, dx, dy;
 float r_w = 50.0, r_h = 3.0;
 
 void setup() {
