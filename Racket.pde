@@ -1,10 +1,6 @@
-class Racket {
-    private float x, y, width, height;
+class Racket extends AABB {
     Racket(float x, float y, float width, float height) {
-        this.x      = x;
-        this.y      = y;
-        this.width  = width;
-        this.height = height;
+        super(x, y, width, height);
     }
 
     void show() {
@@ -19,7 +15,7 @@ class Racket {
     }
 
     void applyBallBounceOrNot(Ball ball) {
-        if (ball.willOverlapByPositionDifferential(this.x, this.y, this.width, this.height) > 0) {
+        if (ball.willOverlapByPositionDifferential(this) > 0) {
             ball.setYSpeed(-2);
         }
     }

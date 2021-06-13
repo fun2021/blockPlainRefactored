@@ -1,13 +1,9 @@
-class Block {
-    private float x, y, width, height;
+class Block extends AABB {
     private int hp;
 
     Block(float x, float y, float width, float height, int hp) {
-        this.x      = x;
-        this.y      = y;
-        this.width  = width;
-        this.height = height;
-        this.hp     = hp;
+        super(x, y, width, height);
+        this.hp = hp;
     }
 
     void show() {
@@ -22,7 +18,7 @@ class Block {
 
     void applyBallBounceOrNot(Ball ball) {
         if (this.hp <= 0) return;
-        int ret = ball.willOverlapByPositionDifferential(this.x, this.y, this.width, this.height);
+        int ret = ball.willOverlapByPositionDifferential(this);
         if (ret > 0) {
             if (ret == 1) {
                 ball.bounceX();
